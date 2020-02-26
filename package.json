@@ -1,0 +1,24 @@
+{
+  "name": "ethlondon-buidler-tutorial",
+  "version": "1.0.0",
+  "description": "EthLondon Buidler Tutorial",
+  "scripts": {
+    "test": "buidler test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alcuadrado/ethlondon-buidler-tutorial.git"
+  },
+  "author": "Patricio Palladino <patricio@nomiclabs.io>",
+  "license": "MIT",
+  "homepage": "https://github.com/alcuadrado/ethlondon-buidler-tutorial",
+  "devDependencies": {
+    "@nomiclabs/buidler": "^1.2.0-rc.4",
+    "@nomiclabs/buidler-ethers": "^1.2.0-rc.4",
+    "@nomiclabs/buidler-waffle": "^1.2.0-rc.4",
+    "@openzeppelin/contracts": "^2.5.0",
+    "chai": "^4.2.0",
+    "ethereum-waffle": "^2.3.2",
+    "ethers": "^4.0.45"
+  }
+}
