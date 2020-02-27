@@ -1,7 +1,6 @@
 pragma solidity ^0.5.1;
 
 import "@openzeppelin/contracts/ownership/Ownable.sol";
-import "@nomiclabs/buidler/console.sol";
 
 contract Poll is Ownable {
     struct Proposal {
@@ -26,6 +25,10 @@ contract Poll is Ownable {
         isOpen = false;
     }
 
+    function getProposalsCount() public view returns (uint256) {
+        return proposals.length;
+    }
+
     function open() public onlyOwner {
         isOpen = true;
     }
@@ -45,8 +48,6 @@ contract Poll is Ownable {
 
     function vote(uint256 _proposalId) public {
         require(isOpen, "The poll is not open");
-
-        console.log("Proposal %s is being voted by %s", _proposalId, msg.sender);
 
         proposals[_proposalId].votes += 1;
 

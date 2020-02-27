@@ -111,6 +111,18 @@ describe("Mocha and Chai introduction", function() {
     });
   });
 
+  describe("Running a single test", function () {
+    // Mocha lets you run a single test or describe by using its `.only`
+    // function. It is a method that both `describe` and `it` has to restrict
+    // the tests to them.
+
+    // Try uncommenting this:
+    //
+    // it.only("Should only run this", async function () {
+    //   expect(1).to.be.equal(1);
+    // })
+  })
+
   describe("Empty describes are ignore", function() {
     // This a common gotcha
   });

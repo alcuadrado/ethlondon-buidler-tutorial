@@ -1,7 +1,7 @@
 {
   "name": "ethlondon-buidler-tutorial",
   "version": "1.0.0",
-  "description": "EthLondon Buidler Tutorial",
+  "description": "ETH London Buidler Tutorial",
   "scripts": {
     "test": "buidler test"
   },
@@ -13,9 +13,9 @@
   "license": "MIT",
   "homepage": "https://github.com/alcuadrado/ethlondon-buidler-tutorial",
   "devDependencies": {
-    "@nomiclabs/buidler": "^1.2.0-rc.4",
-    "@nomiclabs/buidler-ethers": "^1.2.0-rc.4",
-    "@nomiclabs/buidler-waffle": "^1.2.0-rc.4",
+    "@nomiclabs/buidler": "^1.2.0",
+    "@nomiclabs/buidler-ethers": "^1.2.0",
+    "@nomiclabs/buidler-waffle": "^1.2.0",
     "@openzeppelin/contracts": "^2.5.0",
     "chai": "^4.2.0",
     "ethereum-waffle": "^2.3.2",

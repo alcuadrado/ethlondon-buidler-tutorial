@@ -7,7 +7,7 @@ describe("Poll contract", function() {
   let other2;
   let others;
 
-  before(async function() {
+  beforeEach(async function() {
     Poll = await ethers.getContractFactory("Poll");
     [owner, other1, other2, ...others] = await ethers.getSigners();
   });
@@ -15,6 +15,7 @@ describe("Poll contract", function() {
   describe("Deployment", function() {
     it("Should set the right owner", async function() {
       const poll = await Poll.deploy("My poll");
+      await poll.deployed();
 
       expect(await poll.owner()).to.equal(await owner.getAddress());
     });
@@ -22,12 +23,14 @@ describe("Poll contract", function() {
     it("Should set the Poll's name", async function() {
       const pollName = "My Poll";
       const poll = await Poll.deploy(pollName);
+      await poll.deployed();
 
       expect(await poll.name()).to.equal(pollName);
     });
 
     it("Should start closed", async function() {
       const poll = await Poll.deploy("My Poll");
+      await poll.deployed();
 
       expect(await poll.isOpen()).to.be.false;
     });
@@ -38,6 +41,7 @@ describe("Poll contract", function() {
 
     beforeEach(async function() {
       poll = await Poll.deploy("My Poll");
+      await poll.deployed();
     });
 
     describe("Opening", function() {
@@ -89,6 +93,7 @@ describe("Poll contract", function() {
 
     beforeEach(async function() {
       poll = await Poll.deploy("My Poll");
+      await poll.deployed();
     });
 
     describe("Before opening the poll", function() {
@@ -138,6 +143,16 @@ describe("Poll contract", function() {
         expect(proposal2.description).to.be.equal(description2);
         expect(proposal2.votes).to.be.equal(0);
       });
+
+      it("Should increase the getProposalsCount", async function() {
+        expect(await poll.getProposalsCount()).to.equal(0);
+
+        await poll.addProposal("p1");
+        expect(await poll.getProposalsCount()).to.equal(1);
+
+        await poll.addProposal("p2");
+        expect(await poll.getProposalsCount()).to.equal(2);
+      });
     });
   });
 
@@ -148,6 +163,7 @@ describe("Poll contract", function() {
 
     beforeEach(async function() {
       poll = await Poll.deploy("My Poll");
+      await poll.deployed();
 
       // We add a few proposals here
       poll.addProposal(description1);
