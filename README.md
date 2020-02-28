@@ -195,11 +195,11 @@ await poll.deployed();
 
 ## Deploying a smart contract
 
-# Writing a frontend
+## Writing a frontend
 
 You can find an example of a minimal frontend for this contract in [frontend/](frontend/).
 
-# Useful links
+## Useful links
 
 - [Buidler's documentation](https://buidler.dev/getting-started/)
   - [Buidler's Config docs](https://buidler.dev/config/)
