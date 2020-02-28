@@ -197,6 +197,8 @@ await poll.deployed();
 
 # Writing a frontend
 
+You can find an example of a minimal frontend for this contract in [frontend/](frontend/).
+
 # Useful links
 
 - [Buidler's documentation](https://buidler.dev/getting-started/)
