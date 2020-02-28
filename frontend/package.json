@@ -1,0 +1,27 @@
+{
+  "name": "frontend",
+  "version": "0.0.1",
+  "description": "Example dapp",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel dev index.html",
+    "build": "parcel build index.html"
+  },
+  "keywords": [
+    "Ethereum",
+    "dapp"
+  ],
+  "author": "Patricio Palladino <patricio@nomiclabs.io>",
+  "license": "MIT",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  },
+  "dependencies": {
+    "ethers": "^4.0.45",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0"
+  },
+  "browserlist": [
+    "last 2 versions and not dead and not ie 11 and >0.2%"
+  ]
+}

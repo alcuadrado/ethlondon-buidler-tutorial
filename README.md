@@ -195,7 +195,7 @@ await poll.deployed();
 
 ## Deploying a smart contract
 
-# Writing a front-end
+# Writing a frontend
 
 # Useful links
 

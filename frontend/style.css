@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: #EEE;
+  font-family: sans-serif;
+}
+
+#container {
+  border: 1px solid #CCC;
+  border-radius: 5px;
+  background: #FAFAFA;
+  width: 1000px;
+  margin: 10px auto;
+  text-align: center;
+  padding: 30px 50px;
+}

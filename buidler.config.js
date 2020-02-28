@@ -17,7 +17,6 @@ module.exports = {
   },
   networks: {
     buidlerevm: {
-      loggingEnabled: false
     },
     mainnet: {
       url: `https://mainnet.infura.io/v3/${INFURA_PROJECT_ID}`,
