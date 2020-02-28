@@ -11,6 +11,7 @@ To run this frontend you have to follow this instructions:
 3. Open your MetaMask and select the network "Localhost 8545".
 4. Deploy the smart contract to your testing network with `npx buidler run scripts/deploy.js --network localhost`.
 5. Run `npm run dev` in this directory.
+6. Go to [http://localhost:1234](http://localhost:1234)
 
 ## Interacting with the network and your contract
 
