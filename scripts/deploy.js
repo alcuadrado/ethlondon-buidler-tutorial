@@ -9,6 +9,14 @@ Use the Buidler option '--network localhost'`
     );
   }
 
+  const [deployer] = await ethers.getSigners();
+  console.log(
+    "Deploying the contracts with the account:",
+    await deployer.getAddress()
+  );
+  
+  console.log("Account balance:", (await deployer.getBalance()).toString());
+
   const Poll = await ethers.getContractFactory("Poll");
   const poll = await Poll.deploy("My Poll");
 

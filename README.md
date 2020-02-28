@@ -255,7 +255,6 @@ function vote(uint256 _proposalId) public {
 }
 ```
 
-
 ### Verbose Buidler EVM output
 
 If you want to know which RPC calls are being made, you can enable Buidler EVM's verbose output.
@@ -263,6 +262,30 @@ If you want to know which RPC calls are being made, you can enable Buidler EVM's
 To do so, open `buidler.config.js` and add `loggingEnabled: true` to `module.exports.networks.buidlerevm`.
 
 ## Deploying a smart contract
+
+To deploy a smart contract you just need to get an ethers `ContractFactory` and use its deployment functionality we already saw.
+
+We already created a script that deploys the `Poll`, which you can run with
+`npx buidler run scripts/deploy.js --network <network-name>`.
+
+The `--network` parameters indicates which network we want to deploy to. If none is provided, Buidler will start a new instance of Buidler EVM, deploy to it, and then destroy it, which wouldn't be useful.
+
+This project has multiple networks already setup:
+
+* `localhost`: A local testing network. Start one with `npx buidler node`. You need to restart it after recompiling your contracts.
+* `mainnet`: The main Ethereum network.
+* Testnets:
+  * `ropsten`
+  * `kovan`
+  * `rinkeby`
+  * `gorli`
+
+Rember that you need to have ETH in the account that you are going to use to deploy your contracts. You can get some for testnets from faucet, a service that distributes testing-ETH for free.
+
+* [Ropsten faucet](https://faucet.metamask.io/)
+* [Kovan faucet](https://faucet.kovan.network/)
+* [Rinkeby faucet](https://faucet.rinkeby.io/)
+* [Gorli faucet](https://goerli-faucet.slock.it/)
 
 ## Writing a frontend
 
