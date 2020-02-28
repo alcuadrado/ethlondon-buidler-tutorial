@@ -199,15 +199,15 @@ await poll.deployed();
 
 # Useful links
 
-- Buidler documentation
-  - Buidler Config
-- Mocha documentation
-- Chai `expect` API
-- Waffle Matchers
-- Ethers documentation
-  - Provider
-  - Signer
-  - Contract
-  - Utils
-  - Constants
-- OpenZeppelin Contracts documentation
+- [Buidler's documentation](https://buidler.dev/getting-started/)
+  - [Buidler's Config docs](https://buidler.dev/config/)
+- [Mocha's documentation](https://mochajs.org/#hooks)
+- [Chai's `expect` API](https://www.chaijs.com/api/bdd/)
+- [Waffle's Matchers](https://ethereum-waffle.readthedocs.io/en/latest/matchers.html)
+- [Ethers' documentation](https://docs.ethers.io/ethers.js/html/)
+  - [Provider](https://docs.ethers.io/ethers.js/html/api-providers.html)
+  - [Signer](https://docs.ethers.io/ethers.js/html/api-wallet.html)
+  - [Contract](https://docs.ethers.io/ethers.js/html/api-contract.html)
+  - [Utils](https://docs.ethers.io/ethers.js/html/api-utils.html)
+  - [Useful constants](https://docs.ethers.io/ethers.js/html/api-utils.html#constants)
+- [OpenZeppelin Contracts documentation](https://docs.openzeppelin.com/contracts/2.x/)
