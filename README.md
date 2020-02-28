@@ -268,7 +268,7 @@ To deploy a smart contract you just need to get an ethers `ContractFactory` and 
 We already created a script that deploys the `Poll`, which you can run with
 `npx buidler run scripts/deploy.js --network <network-name>`.
 
-The `--network` parameters indicates which network we want to deploy to. If none is provided, Buidler will start a new instance of Buidler EVM, deploy to it, and then destroy it, which wouldn't be useful.
+The `--network` parameters indicates which network we want to deploy to. If none is provided, Buidler will start a new instance of Buidler EVM, deploy your contracts into it, and then destroy it, which wouldn't be useful.
 
 This project has multiple networks already setup:
 
