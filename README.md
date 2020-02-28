@@ -75,7 +75,7 @@ Just like in most JavaScript projects, smart contract tests are written using Mo
 
 If you've never worked with Mocha and Chai, take a look at [`test/mocha-and-chai-introduction.js`](test/mocha-and-chai-introduction.js), which has a five minutes introduction to them.
 
-To run your tests, all you need to do is `npx buidler tests`.
+To run your tests, all you need to do is `npx buidler test`.
 
 ## ethers.js
 
