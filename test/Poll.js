@@ -1,6 +1,8 @@
 const { expect } = require("chai");
 
 describe("Poll contract", function() {
+  // We define the ContractFactory and Signer variables here and assign them in
+  // a beforeEach hook.
   let Poll;
   let owner;
   let other1;
@@ -8,10 +10,12 @@ describe("Poll contract", function() {
   let others;
 
   beforeEach(async function() {
+    // Get the ContractFactory and Signers here.
     Poll = await ethers.getContractFactory("Poll");
     [owner, other1, other2, ...others] = await ethers.getSigners();
   });
 
+  // We test different functionality of the contract as normal Mocha tests.
   describe("Deployment", function() {
     it("Should set the right owner", async function() {
       const poll = await Poll.deploy("My poll");

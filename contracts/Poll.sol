@@ -54,7 +54,6 @@ contract Poll is Ownable {
     }
 
     function vote(uint256 _proposalId) public {
-        console.log("Accounts %s is voting for %s", msg.sender, _proposalId);
         require(isOpen, "The poll is not open");
 
         proposals[_proposalId].votes += 1;
