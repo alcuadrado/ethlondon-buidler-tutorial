@@ -1,7 +1,13 @@
-pragma solidity ^0.5.1;
+pragma solidity ^0.5.15;
 
+// We import this contract, which will handle permissions for us
 import "@openzeppelin/contracts/ownership/Ownable.sol";
 
+// We will use this for debugging
+import "@nomiclabs/buidler/console.sol";
+
+// We make the Poll contract Owneable. This creates an owner permission that we
+// use to restrict who can add proposals, open and close the Poll
 contract Poll is Ownable {
     struct Proposal {
         string description;
@@ -20,7 +26,8 @@ contract Poll is Ownable {
     mapping(address => bool) hasVoted;
 
     constructor(string memory _name) public {
-        // Ownable's constructor gets called automatically
+        // Ownable's constructor gets called automatically, initializing the
+        // owner as msg.sender
         name = _name;
         isOpen = false;
     }
@@ -47,6 +54,7 @@ contract Poll is Ownable {
     }
 
     function vote(uint256 _proposalId) public {
+        console.log("Accounts %s is voting for %s", msg.sender, _proposalId);
         require(isOpen, "The poll is not open");
 
         proposals[_proposalId].votes += 1;

@@ -185,19 +185,88 @@ await poll.deployed();
 
 ## Waffle's Chai matchers
 
-## Debugging your smart contracts
+Chai comes with a lot of assertion functions, called matchers, built-in. This are incredibly useful when testing JavaScript applications, but are not enough for testing smart contracts.
+
+We want to be able to check if a transaction failed, which was its revert message, the events it emitted, etc.
+
+To make all these things in an easy and intuitive way, we can use [Waffle's Cahi matchers](https://ethereum-waffle.readthedocs.io/en/latest/matchers.html). These are extra assertion functions that get added to Chai.
+
+For example, you can check if a transaction failed by doing:
+
+```js
+await expect(poll.vote(0)).to.be.reverted;
+```
+
+Waffle comes with matchers for:
+
+* Big Numbers
+* Events
+* Reverts and revert reasons
+* Balance changes
+* Addresses validation
+
+You don't need to do anything to install these matchers, they are already installed in this project.
+
+## Debugging your smart contracts with Buidler EVM
+
+Buidler EVM is a development network built to make developing and testing smart contracts easier.
+
+It makes debugging easier by adding stack traces and `console.log` to Solidity.
+
+To learn more about Buidler EVM, take a look at [its documentation](https://buidler.dev/buidler-evm/).
 
 ### Solidity stack traces
 
+Buidler EVM knows which contracts are being executed. When a transaction fails, it knows exactly why that happened.
+
+It uses this info to create Solidity stack traces when a transaction is rejected. These are encoded as normal JavaScript stack traces, so you don't need to do anything special for them to work.
+
+For example, if we try to vote in a Poll that hasn't openned yet, we'll see an exception like this. Which has the revert reason and the line where the Solidity stack trace.
+
+```
+Error: VM Exception while processing transaction: revert The poll is not open
+  at Poll.vote (contracts/Poll.sol:57)
+  at process._tickCallback (internal/process/next_tick.js:68:7)
+```
+
 ### Using `console.log` from Solidity
 
+When running your contracts on Buidler EVM, you can use `console.log` from Solidity. This is very helpful to understand the state of your contract, and why your transactions are failing.
+
+To do so, you need to import the console library with:
+
+```solidity
+import "@nomiclabs/buidler/console.sol";
+```
+
+Then, you can use it like JavaScript `console.log`:
+
+```solidity
+function vote(uint256 _proposalId) public {
+    console.log("Accounts %s is voting for %s", msg.sender, _proposalId);
+
+    require(isOpen, "The poll is not open");
+    proposals[_proposalId].votes += 1;
+
+    require(!hasVoted[msg.sender], "You have already voted");
+    hasVoted[msg.sender] = true;
+
+    emit VoteCasted(_proposalId, msg.sender, proposals[_proposalId].votes);
+}
+```
+
+
 ### Verbose Buidler EVM output
+
+If you want to know which RPC calls are being made, you can enable Buidler EVM's verbose output.
+
+To do so, open `buidler.config.js` and add `loggingEnabled: true` to `module.exports.networks.buidlerevm`.
 
 ## Deploying a smart contract
 
 ## Writing a frontend
 
-You can find an example of a minimal frontend for this contract in [frontend/](frontend/).
+You can find an example of a minimal frontend for this contract in [frontend/](frontend/)
 
 ## Useful links
 

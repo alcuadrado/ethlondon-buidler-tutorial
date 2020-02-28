@@ -18,10 +18,21 @@ To run this frontend you have to follow this instructions:
 
 ## Interacting with the network and your contract
 
-You are going to need some tesnting-network ETH in MetaMask to interact with your contract. To get some, copy your MetaMask address, and run `npx buidler send-eth <address> --network localhost` in the root of the repo.
+You are going to need some testing-network ETH in MetaMask to interact with your contract. To get some, copy your MetaMask address, and run `npx buidler send-eth <address> --network localhost` in the root of the repo.
 
 You will also want to add proposals, open the poll and close it. You can do these things by running:
 
 * `npx buidler add-proposal <description> --network localhost`
 * `npx buidler open-poll --network localhost`
 * `npx buidler close-poll --network localhost`
+
+## Recompiling your contracts and Buidler EVM
+
+If you change your contracts, you'll need to recompile them, reset Buidler EVM,
+and redeploy them.
+
+## Resetting MetaMask's accounts
+
+Every time you restart Buidler EVM, you need to reset MetaMask's accounts.
+
+To do it, you need to open MetaMask, click in the accounts selection circle, go to `Settings > Advanced`, click `Reset Accounts` and confirm.
