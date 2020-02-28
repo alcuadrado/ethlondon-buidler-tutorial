@@ -8,12 +8,13 @@ You can find all of the code, and its explanation, in [index.js](./index.js).
 
 To run this frontend you have to follow this instructions:
 
-1. Install [Metamask](https://metamask.io/) in your browser.
-2. Start a testing network powered by Buidler EVM by running `npx buidler node` in the root of the repo.
-3. Open your MetaMask and select the network "Localhost 8545".
-4. Deploy the smart contract to your testing network with `npx buidler run scripts/deploy.js --network localhost`.
-5. Run `npm run dev` in this directory.
-6. Go to [http://localhost:1234](http://localhost:1234)
+1. Run `npm install` in this project.
+2. Install [Metamask](https://metamask.io/) in your browser.
+3. Start a testing network powered by Buidler EVM by running `npx buidler node` in the root of the repo.
+4. Open your MetaMask and select the network "Localhost 8545".
+5. Deploy the smart contract to your testing network with `npx buidler run scripts/deploy.js --network localhost`.
+6. Run `npm run dev` in this directory.
+7. Go to [http://localhost:1234](http://localhost:1234)
 
 ## Interacting with the network and your contract
 
