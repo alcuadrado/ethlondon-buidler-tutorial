@@ -2,6 +2,8 @@
 
 This directory has a minimal React-based frontend for the Poll smart contract.
 
+You can find all of the code, and its explanation, in [index.js](./index.js).
+
 ## Running it
 
 To run this frontend you have to follow this instructions:
